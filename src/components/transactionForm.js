@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
         borderColor: "white",
       },
       "&.Mui-focused fieldset": {
-        borderColor: "blue",
+        borderColor: "lightBlue",
         color: "white",
       },
       "&::placeholder": {

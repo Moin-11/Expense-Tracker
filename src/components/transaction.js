@@ -49,11 +49,12 @@ const TransactionItem = ({ transaction }) => {
       </TableCell>
       <TableCell className={classes.tablecells} align="center">
         <IconButton
+        color = "secondary"
           onClick={() => {
             obliterateTransaction(transaction.id);
           }}
         >
-          <CancelIcon fontSize="large" color="red"></CancelIcon>
+          <CancelIcon fontSize="large" style = {{fill:"red"}}></CancelIcon>
         </IconButton>
       </TableCell>
     </TableRow>

@@ -55,7 +55,7 @@ const TransactionHistoryList = () => {
           <TableHead>
             <TableRow>
               <TableCell align="left" className={classes.tableTopcells}>
-                Transaction ID
+                ID
               </TableCell>
               <TableCell className={classes.tableTopcells} align="left">
                 Transaction Name
@@ -64,7 +64,7 @@ const TransactionHistoryList = () => {
                 Transaction Value (in $)
               </TableCell>
               <TableCell className={classes.tableTopcells} align="center">
-                Delete Row
+                Delete
               </TableCell>
             </TableRow>
           </TableHead>
