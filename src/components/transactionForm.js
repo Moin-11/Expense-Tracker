@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import { GlobalContext } from "../context/globalContext";
-
+import { Title } from "./Title";
+import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
 // UI Imports
-import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
@@ -11,17 +11,17 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     fontFamily: "Bebas Neue",
     "&::placeholder": {
-      color: "lightBlue",
-      fontSize: "1.2rem",
+      color: "lightgrey",
+      fontSize: "1.3rem",
       opacity: "0.8",
     },
   },
 
   root: {
     display: "flex",
-    paddingTop: "100px",
-    justifyContent: "space-around",
-    alignItems: "flex-start",
+    marginTop: "100px",
+    justifyContent: "space-between",
+    alignItems: "center",
     paddingLeft: "10px",
 
     color: "white",
@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
     borderColor: "white !important",
     borderInlineColor: "white",
     outlineColor: "white",
+
     "& .MuiTextField-root": {
       width: "50vw",
     },
@@ -42,36 +43,37 @@ const useStyles = makeStyles((theme) => ({
       "& fieldset": {
         borderStyle: "solid",
         borderWidth: "2px",
-        borderColor: "white",
+        borderColor: "lightgrey",
         color: "white",
       },
       "&:hover fieldset": {
         borderColor: "white",
       },
       "&.Mui-focused fieldset": {
-        borderColor: "lightBlue",
+        borderColor: "white",
         color: "white",
       },
       "&::placeholder": {
         color: "white",
       },
-      width: "50vw",
-      display: "flex",
 
-      alignItems: "center",
-      justifyContent: "center",
+      "& ::placeholder :hover": {
+        color: "white",
+      },
     },
   },
   button: {
+    alignSelf: "center",
     borderStyle: "solid",
     borderWidth: "2.0px",
     backgroundColor: "transparent",
-    color: "white",
+    color: "lightGrey",
     fontFamily: "Bebas Neue",
     fontSize: "1rem",
     "&:hover": {
       backgroundColor: "transparent",
-      color: "lightBlue",
+      color: "white",
+      opacity: "1.0",
       transition: "0.3s",
     },
   },
@@ -90,7 +92,7 @@ export const TransactionForm = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    if (transactionValue == "" || detail == "") {
+    if (transactionValue === "" || detail === "") {
       return;
     }
     const newTransaction = {
@@ -103,18 +105,14 @@ export const TransactionForm = () => {
 
   return (
     <form className={classes.root} onSubmit={onSubmit}>
-      <h1
+      <ThemeProvider>
+        <Title titleText="Add New Transaction" />
+      </ThemeProvider>
+      <div
         style={{
-          color: "white",
-          fontFamily: "Bebas Neue",
-          letterSpacing: "2px",
-          fontSize: "3rem",
+          padding: "0px 0px 0px 20px !important",
         }}
       >
-        Add New Transaction
-      </h1>
-
-      <div>
         <TextField
           inputProps={{ className: classes.textFields }}
           required="true"

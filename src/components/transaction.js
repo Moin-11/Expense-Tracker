@@ -9,6 +9,7 @@ import CancelIcon from "@material-ui/icons/Cancel";
 import { makeStyles } from "@material-ui/core/styles";
 import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
+import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles({
   tablecells: {
@@ -38,23 +39,24 @@ const TransactionItem = ({ transaction }) => {
         className={classes.tablecells}
         component="th"
         scope="row"
+        maxWidth="20%"
       >
         {transaction.id}
       </TableCell>
-      <TableCell className={classes.tablecells} align="left">
-        {transaction.detail}
+      <TableCell className={classes.tablecells} align="left" maxWidth="30%">
+        <Typography variant="subtitle">{transaction.detail}</Typography>
       </TableCell>
-      <TableCell className={classes.tablecells} align="left">
+      <TableCell className={classes.tablecells} align="left" maxWidth="30%">
         {transaction.transactionValue}
       </TableCell>
-      <TableCell className={classes.tablecells} align="center">
+      <TableCell className={classes.tablecells} align="center" maxWidth="20%">
         <IconButton
-        color = "secondary"
+          color="secondary"
           onClick={() => {
             obliterateTransaction(transaction.id);
           }}
         >
-          <CancelIcon fontSize="large" style = {{fill:"red"}}></CancelIcon>
+          <CancelIcon fontSize="large" style={{ fill: "red" }}></CancelIcon>
         </IconButton>
       </TableCell>
     </TableRow>

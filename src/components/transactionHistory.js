@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/globalContext";
-import { makeStyles } from "@material-ui/core/styles";
 import TransactionItem from "./transaction";
-
+import { Title } from "./Title";
 // UI Imports
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -11,17 +10,17 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 650,
+    minWidth: "auto",
     height: "auto",
   },
 
   tableTopcells: {
     borderStyle: "solid",
     borderWidth: "3px",
-
     color: "white",
     fontSize: "1.4rem",
     fontFamily: "Bebas Neue",
@@ -32,38 +31,55 @@ const TransactionHistoryList = () => {
   const classes = useStyles();
 
   const { transactions } = useContext(GlobalContext);
-  const { obliterateTransaction } = useContext(GlobalContext);
   return (
-    <div>
-      <h1
-        style={{
-          paddingTop: "30px",
-          paddingBottom: "20px",
-          paddingLeft: "10px",
-          fontFamily: "Bebas Neue",
-          fontSize: "3.0rem",
-          color: "white",
-        }}
-      >
-        Transactions History
-      </h1>
+    <div
+      style={{
+        marginTop: "3rem",
+      }}
+    >
+      <ThemeProvider>
+        <Title titleText="Transaction History" />
+      </ThemeProvider>
+
       <TableContainer
         component={Paper}
-        style={{ backgroundColor: "transparent" }}
+        style={{
+          width: "100%",
+          alignContent: "center",
+          backgroundColor: "transparent",
+          display: "flex",
+          margin: "20px 0px 0px 10px",
+        }}
       >
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell align="left" className={classes.tableTopcells}>
+              <TableCell
+                align="left"
+                className={classes.tableTopcells}
+                maxWidth="20%"
+              >
                 ID
               </TableCell>
-              <TableCell className={classes.tableTopcells} align="left">
+              <TableCell
+                className={classes.tableTopcells}
+                align="left"
+                maxWidth="30%"
+              >
                 Transaction Name
               </TableCell>
-              <TableCell className={classes.tableTopcells} align="left">
+              <TableCell
+                className={classes.tableTopcells}
+                align="left"
+                maxWidth="30%"
+              >
                 Transaction Value (in $)
               </TableCell>
-              <TableCell className={classes.tableTopcells} align="center">
+              <TableCell
+                className={classes.tableTopcells}
+                align="center"
+                maxWidth="20%"
+              >
                 Delete
               </TableCell>
             </TableRow>

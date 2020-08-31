@@ -2,7 +2,11 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div>
+    <div
+      style={{
+        borderWidth: "0px",
+      }}
+    >
       <div
         className="container"
         style={{

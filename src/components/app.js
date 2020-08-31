@@ -8,8 +8,6 @@ import { TransactionForm } from "../components/transactionForm";
 
 import background from "../images/pexels-miguel-á-padriñán-745365.jpg";
 
-
-
 const App = () => {
   return (
     <GlobalProvider>
@@ -17,14 +15,12 @@ const App = () => {
         style={{
           margin: "0px",
           padding: "0px",
-          width: "100%",
-          height: "100%",
+          borderWidth: "0px",
           backgroundImage: `url(${background})`,
-          backgroundSize: "100%",
-          width: "100vw",
-          height: "100vh",
-          top: "0",
-          left: "0",
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
         }}
       >
         <Header />
