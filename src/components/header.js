@@ -14,7 +14,7 @@ const Header = () => {
           alignItems: "center",
           justifyContent: "center",
           marginBottom: "3rem",
-          fontFamily: "Courgette",
+          fontFamily: "Bebas Neue",
           fontSize: "2.3rem",
           color: "white",
         }}
