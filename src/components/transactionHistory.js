@@ -44,9 +44,9 @@ const TransactionHistoryList = () => {
       <TableContainer
         component={Paper}
         style={{
-          width: "100%",
+          width: "90%",
           alignContent: "center",
-          backgroundColor: "transparent",
+          backgroundColor: "blue",
           display: "flex",
           margin: "20px 0px 0px 10px",
         }}
@@ -57,7 +57,7 @@ const TransactionHistoryList = () => {
               <TableCell
                 align="left"
                 className={classes.tableTopcells}
-                maxWidth="20%"
+                maxWidth="10%"
               >
                 ID
               </TableCell>
