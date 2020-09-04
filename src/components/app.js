@@ -31,8 +31,8 @@ const App = () => {
           >
             <Header />
             <BalanceGrid />
-            <TransactionHistoryList />
             <TransactionForm />
+            <TransactionHistoryList />
           </div>
         </ThemeProvider>
       </CssBaseline>

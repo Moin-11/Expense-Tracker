@@ -13,11 +13,6 @@ import Paper from "@material-ui/core/Paper";
 import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
-  table: {
-    minWidth: "auto",
-    height: "auto",
-  },
-
   tableTopcells: {
     borderStyle: "solid",
     borderWidth: "3px",
@@ -27,7 +22,7 @@ const useStyles = makeStyles({
   },
 });
 
-const TransactionHistoryList = () => {
+const TransactionsTable = () => {
   const classes = useStyles();
 
   const { transactions } = useContext(GlobalContext);
@@ -37,67 +32,78 @@ const TransactionHistoryList = () => {
         marginTop: "3rem",
       }}
     >
-      <ThemeProvider>
-        <Title titleText="Transaction History" />
-      </ThemeProvider>
-
-      <TableContainer
-        component={Paper}
+      <div
         style={{
-          width: "90%",
-          alignContent: "center",
-          backgroundColor: "blue",
           display: "flex",
-          margin: "20px 0px 0px 10px",
+          justifyContent: "flex-start",
         }}
       >
-        <Table className={classes.table} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell
-                align="left"
-                className={classes.tableTopcells}
-                maxWidth="10%"
-              >
-                ID
-              </TableCell>
-              <TableCell
-                className={classes.tableTopcells}
-                align="left"
-                maxWidth="30%"
-              >
-                Transaction Name
-              </TableCell>
-              <TableCell
-                className={classes.tableTopcells}
-                align="left"
-                maxWidth="30%"
-              >
-                Transaction Value (in $)
-              </TableCell>
-              <TableCell
-                className={classes.tableTopcells}
-                align="center"
-                maxWidth="20%"
-              >
-                Delete
-              </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {transactions.map((transaction) => {
-              return (
-                <TransactionItem
-                  key={transactions.id}
-                  transaction={transaction}
-                />
-              );
-            })}
-          </TableBody>
-        </Table>
-      </TableContainer>
+        <ThemeProvider>
+          <Title titleText="Transaction History" />
+        </ThemeProvider>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <TableContainer
+          component={Paper}
+          style={{
+            backgroundColor: "blue",
+            margin: "20px 0px 0px 10px",
+          }}
+        >
+          <Table className={classes.table} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell
+                  align="left"
+                  className={classes.tableTopcells}
+                  maxWidth="10%"
+                >
+                  ID
+                </TableCell>
+                <TableCell
+                  className={classes.tableTopcells}
+                  align="left"
+                  maxWidth="30%"
+                >
+                  Transaction Name
+                </TableCell>
+                <TableCell
+                  className={classes.tableTopcells}
+                  align="left"
+                  maxWidth="30%"
+                >
+                  Transaction Value (in $)
+                </TableCell>
+                <TableCell
+                  className={classes.tableTopcells}
+                  align="center"
+                  maxWidth="20%"
+                >
+                  Delete
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {transactions.map((transaction) => {
+                return (
+                  <TransactionItem
+                    key={transactions.id}
+                    transaction={transaction}
+                  />
+                );
+              })}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </div>
     </div>
   );
 };
 
-export default TransactionHistoryList;
+export default TransactionsTable;

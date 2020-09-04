@@ -13,34 +13,24 @@ import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles({
   tablecells: {
-    borderStyle: "solid",
-    borderWidth: "2.5px",
     color: "white",
-    fontSize: "1.2rem",
-    fontFamily: "Bebas Neue",
   },
 
   cancelIcon: {
     "MuiIcon-root": {
-      color: "blue",
+      color: "red",
     },
   },
 });
 
-const TransactionItem = ({ transaction }) => {
+const TransactionRow = ({ transaction }) => {
   const classes = useStyles();
 
   const { obliterateTransaction } = useContext(GlobalContext);
 
   return (
     <TableRow key={transaction.id}>
-      <TableCell
-        align="left"
-        className={classes.tablecells}
-        component="th"
-        scope="row"
-        maxWidth="20%"
-      >
+      <TableCell align="left" className={classes.tablecells} maxWidth="20%">
         {transaction.id}
       </TableCell>
       <TableCell className={classes.tablecells} align="left" maxWidth="30%">
@@ -51,16 +41,15 @@ const TransactionItem = ({ transaction }) => {
       </TableCell>
       <TableCell className={classes.tablecells} align="center" maxWidth="20%">
         <IconButton
-          color="secondary"
           onClick={() => {
             obliterateTransaction(transaction.id);
           }}
         >
-          <CancelIcon fontSize="large" style={{ fill: "red" }}></CancelIcon>
+          <CancelIcon fontSize="medium" style={{ fill: "red" }}></CancelIcon>
         </IconButton>
       </TableCell>
     </TableRow>
   );
 };
 
-export default TransactionItem;
+export default TransactionRow;

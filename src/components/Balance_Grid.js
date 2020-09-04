@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/globalContext";
-
+import GridCard from "../components/gridCard";
 // UI Imports
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
@@ -11,16 +11,6 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     marginLeft: "2rem",
     marginRight: "2rem",
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: "center",
-    backgroundColor: "transparent",
-    color: "#eeeeee",
-    borderWidth: "3px",
-    borderColor: "white",
-    borderStyle: "solid",
-    fontFamily: "Bebas Neue",
   },
 }));
 
@@ -51,27 +41,11 @@ export default function BalanceGrid() {
   return (
     <div className={classes.root}>
       <Grid direction="row" container spacing={2}>
-        <Grid item xs={11} md={4}>
-          <Paper className={classes.paper}>
-            <h1>Current Balance: </h1>
-            <br />
-            <h2 id="balance">${balance}</h2>
-          </Paper>
-        </Grid>
-        <Grid item xs={11} md={4}>
-          <Paper className={classes.paper}>
-            <h1>Income</h1>
-            <br />
-            <h2>${income}</h2>
-          </Paper>
-        </Grid>
-        <Grid item xs={11} md={4}>
-          <Paper className={classes.paper}>
-            <h1>Expenditure</h1>
-            <br />
-            <h2>${expense}</h2>
-          </Paper>
-        </Grid>
+        <GridCard title="Balance" value={balance} />
+
+        <GridCard title="Income" value={income} />
+
+        <GridCard title="Expense" value={expense} />
       </Grid>
     </div>
   );
