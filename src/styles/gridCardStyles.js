@@ -5,11 +5,11 @@ const GCardStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: "center",
     backgroundColor: "transparent",
-    color: "#eeeeee",
     borderWidth: "3px",
     borderColor: "white",
     borderStyle: "solid",
     fontFamily: "Bebas Neue",
+    
   },
 }));
 

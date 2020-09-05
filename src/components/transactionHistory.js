@@ -11,6 +11,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
+import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles({
   tableTopcells: {
@@ -19,7 +20,7 @@ const useStyles = makeStyles({
     color: "white",
     fontSize: "1.8rem",
     fontFamily: "Bebas Neue",
-    padding: "20px 5px",
+    padding: "20px 10px",
   },
 });
 
@@ -54,7 +55,7 @@ const TransactionsTable = () => {
           component={Paper}
           style={{
             backgroundColor: "transparent",
-            margin: "20px 0px 0px 10px",
+            margin: "20px 10px",
           }}
         >
           <Table className={classes.table} aria-label="simple table">
@@ -65,28 +66,28 @@ const TransactionsTable = () => {
                   className={classes.tableTopcells}
                   maxWidth="10%"
                 >
-                  ID
+                  <Typography variant="h3">ID</Typography>
                 </TableCell>
                 <TableCell
                   className={classes.tableTopcells}
                   align="left"
                   maxWidth="30%"
                 >
-                  Transaction Name
+                  <Typography variant="h3">Transx Name</Typography>
                 </TableCell>
                 <TableCell
                   className={classes.tableTopcells}
                   align="left"
                   maxWidth="30%"
                 >
-                  Transaction Value (in $)
+                  <Typography variant="h3">Transx Value</Typography>
                 </TableCell>
                 <TableCell
                   className={classes.tableTopcells}
                   align="left"
                   maxWidth="20%"
                 >
-                  Delete
+                  <Typography variant="h3">Delete</Typography>
                 </TableCell>
               </TableRow>
             </TableHead>

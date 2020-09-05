@@ -13,6 +13,24 @@ const theme = createMuiTheme({
 
   typography: {
     fontFamily: ["Bebas Neue", "Arial"],
+    h1: {
+      fontSize: "3.0rem",
+      letterSpacing: "2px",
+      color: "white",
+    },
+    h2: {
+      fontSize: "2.5rem",
+      letterSpacing: "1px",
+      color: "white",
+    },
+
+    h3: {
+      fontSize: "2.0rem",
+    },
+
+    h4: {
+      fontSize: "1.5rem",
+    },
   },
 
   overrides: {
@@ -23,7 +41,7 @@ const theme = createMuiTheme({
         borderStyle: "solid",
         borderWidth: "2.5px",
         fontFamily: "Bebas Neue",
-        padding: "0px 10px",
+        padding: "2px 10px",
       },
     },
   },

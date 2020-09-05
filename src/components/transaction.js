@@ -4,7 +4,7 @@ import { GlobalContext } from "../context/globalContext";
 
 //Material- UI Imports
 import IconButton from "@material-ui/core/IconButton";
-import CancelIcon from "@material-ui/icons/Cancel";
+import CancelRounded from "@material-ui/icons/CancelRounded";
 
 import { makeStyles } from "@material-ui/core/styles";
 import TableCell from "@material-ui/core/TableCell";
@@ -31,13 +31,13 @@ const TransactionRow = ({ transaction }) => {
   return (
     <TableRow key={transaction.id}>
       <TableCell align="left" className={classes.tablecells} maxWidth="20%">
-        {transaction.id}
+        <Typography variant="h4">{transaction.id}</Typography>
       </TableCell>
       <TableCell className={classes.tablecells} align="left" maxWidth="30%">
-        <Typography variant="subtitle">{transaction.detail}</Typography>
+        <Typography variant="h4">{transaction.detail}</Typography>
       </TableCell>
       <TableCell className={classes.tablecells} align="left" maxWidth="30%">
-        {transaction.transactionValue}
+        <Typography variant="h4">{transaction.transactionValue}</Typography>
       </TableCell>
       <TableCell className={classes.tablecells} align="center" maxWidth="20%">
         <IconButton
@@ -45,7 +45,10 @@ const TransactionRow = ({ transaction }) => {
             obliterateTransaction(transaction.id);
           }}
         >
-          <CancelIcon fontSize="small" style={{ fill: "red" }}></CancelIcon>
+          <CancelRounded
+            fontSize="large"
+            style={{ fill: "red" }}
+          ></CancelRounded>
         </IconButton>
       </TableCell>
     </TableRow>
