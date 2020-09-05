@@ -10,7 +10,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles({
@@ -18,9 +18,8 @@ const useStyles = makeStyles({
     borderStyle: "solid",
     borderWidth: "3px",
     color: "white",
-    fontSize: "1.8rem",
     fontFamily: "Bebas Neue",
-    padding: "20px 10px",
+    padding: "0px 10px",
   },
 });
 
@@ -31,18 +30,17 @@ const TransactionsTable = () => {
   return (
     <div
       style={{
-        margin: "100px 20px 0px 20px",
+        margin: "10px 20px 0px 20px",
       }}
     >
       <div
         style={{
           display: "flex",
           justifyContent: "flex-start",
+          marginBottom: "10px",
         }}
       >
-        <ThemeProvider>
-          <Title titleText="Transaction History" />
-        </ThemeProvider>
+        <Title titleText="Transaction History" />
       </div>
       <div
         style={{
@@ -55,10 +53,14 @@ const TransactionsTable = () => {
           component={Paper}
           style={{
             backgroundColor: "transparent",
-            margin: "20px 10px",
           }}
         >
-          <Table className={classes.table} aria-label="simple table">
+          <Table
+            className={classes.table}
+            aria-label="simple table"
+            dense
+            table
+          >
             <TableHead>
               <TableRow>
                 <TableCell
@@ -66,28 +68,28 @@ const TransactionsTable = () => {
                   className={classes.tableTopcells}
                   maxWidth="10%"
                 >
-                  <Typography variant="h3">ID</Typography>
+                  <Typography variant="h4">ID</Typography>
                 </TableCell>
                 <TableCell
                   className={classes.tableTopcells}
                   align="left"
                   maxWidth="30%"
                 >
-                  <Typography variant="h3">Transx Name</Typography>
+                  <Typography variant="h4">Transx Name</Typography>
                 </TableCell>
                 <TableCell
                   className={classes.tableTopcells}
                   align="left"
                   maxWidth="30%"
                 >
-                  <Typography variant="h3">Transx Value</Typography>
+                  <Typography variant="h4">Transx Value</Typography>
                 </TableCell>
                 <TableCell
                   className={classes.tableTopcells}
                   align="left"
                   maxWidth="20%"
                 >
-                  <Typography variant="h3">Delete</Typography>
+                  <Typography variant="h4">Delete</Typography>
                 </TableCell>
               </TableRow>
             </TableHead>

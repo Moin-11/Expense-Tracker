@@ -26,10 +26,12 @@ const theme = createMuiTheme({
 
     h3: {
       fontSize: "2.0rem",
+      color: "white",
     },
 
     h4: {
       fontSize: "1.5rem",
+      color: "white",
     },
   },
 
@@ -41,7 +43,7 @@ const theme = createMuiTheme({
         borderStyle: "solid",
         borderWidth: "2.5px",
         fontFamily: "Bebas Neue",
-        padding: "2px 10px",
+        padding: "0px 10px",
       },
     },
   },

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { GlobalContext } from "../context/globalContext";
 import { Title } from "./Title";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
 // UI Imports
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
@@ -139,11 +139,12 @@ export const TransactionForm = () => {
 
   return (
     <form className={classes.root}>
-      <Title titleText="Add New Transaction" />
-
+      <ThemeProvider>
+        <Title titleText="Add New Transaction" />
+      </ThemeProvider>
       <div
         style={{
-          padding: "0px 0px 0px 20px !important",
+          padding: "0px 0px 0px 50px !important",
         }}
       >
         <TextField
