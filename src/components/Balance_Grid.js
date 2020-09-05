@@ -22,10 +22,6 @@ export default function BalanceGrid() {
     (transaction) => transaction.transactionValue
   );
 
-  const balance = transactionValues
-    .reduce((acc, item) => (acc += item), 0)
-    .toFixed(2);
-
   const income = transactionValues
     .filter((transaction) => transaction > 0)
     .reduce((acc = 0, value) => (acc += value), 0)
@@ -36,6 +32,10 @@ export default function BalanceGrid() {
       .filter((transaction) => transaction < 0)
       .reduce((acc = 0, value) => (acc += value), 0)
   ).toFixed(2);
+
+  const balance = transactionValues
+    .reduce((acc, item) => (acc += item), 0)
+    .toFixed(2);
 
   return (
     <div className={classes.root}>

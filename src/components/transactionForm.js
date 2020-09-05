@@ -114,30 +114,31 @@ export const TransactionForm = () => {
   //Every single property of the Transaction Object is manipulated through useState();
 
   const [detail, setDetail] = useState("");
-  const [transactionValue, setTransactionValue] = useState("");
+  const [transactionValue, setTransactionValue] = useState(0);
 
   const { transactions } = useContext(GlobalContext);
   const { addTransaction } = useContext(GlobalContext);
 
   //For checkbox
 
-  const [checked, setChecked] = useState(false);
+  const [positive, setPositive] = useState(true);
 
   const onSubmit = (event) => {
     event.preventDefault();
-    if (transactionValue === "" || detail === "") {
+
+    if (transactionValue === 0 || detail === "") {
       return;
     }
     const newTransaction = {
       id: transactions.length + 1,
       detail,
-      transactionValue: +transactionValue,
+      transactionValue: positive ? +transactionValue : -transactionValue,
     };
     addTransaction(newTransaction);
   };
 
   return (
-    <form className={classes.root} onSubmit={onSubmit}>
+    <form className={classes.root}>
       <Title titleText="Add New Transaction" />
 
       <div
@@ -168,13 +169,7 @@ export const TransactionForm = () => {
           variant="outlined"
           value={transactionValue}
           onChange={(e) => {
-            if (checked) {
-              setTransactionValue(-e.target.value);
-            }
-
-            if (!checked) {
-              setTransactionValue(e.target.value);
-            }
+            setTransactionValue(e.target.value);
           }}
         />
         <br />
@@ -194,13 +189,13 @@ export const TransactionForm = () => {
           </Button>
 
           <Button
-            className={checked ? classes.positive : classes.negative}
+            className={positive ? classes.positive : classes.negative}
             variant="text"
             onClick={() => {
-              setChecked(!checked);
+              setPositive(!positive);
             }}
           >
-            {checked ? "+" : "-"}
+            {positive ? "+" : "-"}
           </Button>
         </div>
       </div>
