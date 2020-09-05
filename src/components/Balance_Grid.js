@@ -2,9 +2,8 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../context/globalContext";
 import GridCard from "../components/gridCard";
 // UI Imports
-import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import theme from "../styles/globalTheme";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,7 +40,7 @@ export default function BalanceGrid() {
   return (
     <div className={classes.root}>
       <Grid direction="row" container spacing={2}>
-        <GridCard  title="Balance" value={balance} />
+        <GridCard title="Balance" value={balance} />
 
         <GridCard title="Income" value={income} />
 

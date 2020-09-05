@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { GlobalContext } from "../context/globalContext";
 import { Title } from "./Title";
-import { ThemeProvider } from "@material-ui/core/styles";
 import useStyles from "../styles/transactionFormStyles";
 // UI Imports
 import TextField from "@material-ui/core/TextField";
