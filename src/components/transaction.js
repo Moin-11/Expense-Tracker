@@ -45,7 +45,7 @@ const TransactionRow = ({ transaction }) => {
             obliterateTransaction(transaction.id);
           }}
         >
-          <CancelIcon fontSize="medium" style={{ fill: "red" }}></CancelIcon>
+          <CancelIcon fontSize="small" style={{ fill: "red" }}></CancelIcon>
         </IconButton>
       </TableCell>
     </TableRow>

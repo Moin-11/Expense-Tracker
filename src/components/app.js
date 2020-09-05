@@ -9,13 +9,16 @@ import { TransactionForm } from "../components/transactionForm";
 import background from "../images/bg.jpg";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-import Theme from "../styles/globalTheme";
+import theme from "../styles/globalTheme";
 import { ThemeProvider } from "@material-ui/core/styles";
+import { responsiveFontSizes } from "@material-ui/core";
 const App = () => {
+  const thema = responsiveFontSizes(theme);
+
   return (
     <GlobalProvider>
       <CssBaseline>
-        <ThemeProvider theme={Theme}>
+        <ThemeProvider theme={thema}>
           <div
             style={{
               margin: "0px",

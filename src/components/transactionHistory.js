@@ -17,8 +17,9 @@ const useStyles = makeStyles({
     borderStyle: "solid",
     borderWidth: "3px",
     color: "white",
-    fontSize: "1.4rem",
+    fontSize: "1.8rem",
     fontFamily: "Bebas Neue",
+    padding: "20px 5px",
   },
 });
 
@@ -52,7 +53,7 @@ const TransactionsTable = () => {
         <TableContainer
           component={Paper}
           style={{
-            backgroundColor: "blue",
+            backgroundColor: "transparent",
             margin: "20px 0px 0px 10px",
           }}
         >
@@ -82,7 +83,7 @@ const TransactionsTable = () => {
                 </TableCell>
                 <TableCell
                   className={classes.tableTopcells}
-                  align="center"
+                  align="left"
                   maxWidth="20%"
                 >
                   Delete
