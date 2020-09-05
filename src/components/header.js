@@ -1,26 +1,21 @@
 import React from "react";
+import { Typography } from "@material-ui/core";
 
 const Header = () => {
   return (
     <div
       style={{
-        borderWidth: "0px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        marginBottom: "3rem",
+        fontFamily: "Bebas Neue",
+        color: "white",
+        flexDirection: "column",
       }}
     >
-      <div
-        className="container"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          marginBottom: "3rem",
-          fontFamily: "Bebas Neue",
-          fontSize: "2.3rem",
-          color: "white",
-        }}
-      >
-        Expense Tracker by Moin Sabri
-      </div>
+      <Typography variant="h5">Expense Tracker by Moin11</Typography>
+      <Typography variant="subtitle2">moin11.dev@gmail.com</Typography>
     </div>
   );
 };

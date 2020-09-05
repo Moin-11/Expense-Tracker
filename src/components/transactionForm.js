@@ -6,6 +6,11 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
+//color imports
+
+import Green from "@material-ui/core/colors/green";
+import Red from "@material-ui/core/colors/red";
+
 const useStyles = makeStyles(() => ({
   textFields: {
     color: "white",
@@ -19,7 +24,7 @@ const useStyles = makeStyles(() => ({
 
   root: {
     display: "flex",
-    marginTop: "100px",
+    margin: "100px 10px",
     justifyContent: "space-between",
     alignItems: "center",
     paddingLeft: "10px",
@@ -62,6 +67,10 @@ const useStyles = makeStyles(() => ({
       },
     },
   },
+
+  minusIcon: {
+    fill: "white",
+  },
   button: {
     alignSelf: "center",
     borderStyle: "solid",
@@ -77,6 +86,26 @@ const useStyles = makeStyles(() => ({
       transition: "0.3s",
     },
   },
+
+  positive: {
+    alignSelf: "center",
+    borderStyle: "solid",
+    borderWidth: "2.0px",
+    backgroundColor: "transparent",
+    color: Green[400],
+    fontFamily: "Bebas Neue",
+    fontSize: "1rem",
+  },
+
+  negative: {
+    alignSelf: "center",
+    borderStyle: "solid",
+    borderWidth: "2.0px",
+    backgroundColor: "transparent",
+    color: Red[500],
+    fontFamily: "Bebas Neue",
+    fontSize: "1rem",
+  },
 }));
 
 export const TransactionForm = () => {
@@ -89,6 +118,10 @@ export const TransactionForm = () => {
 
   const { transactions } = useContext(GlobalContext);
   const { addTransaction } = useContext(GlobalContext);
+
+  //For checkbox
+
+  const [checked, setChecked] = useState(false);
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -135,18 +168,41 @@ export const TransactionForm = () => {
           variant="outlined"
           value={transactionValue}
           onChange={(e) => {
-            setTransactionValue(e.target.value);
+            if (checked) {
+              setTransactionValue(-e.target.value);
+            }
+
+            if (!checked) {
+              setTransactionValue(e.target.value);
+            }
           }}
         />
         <br />
         <br />
-        <Button
-          className={classes.button}
-          variant="contained"
-          onClick={onSubmit}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+          }}
         >
-          Submit
-        </Button>
+          <Button
+            className={classes.button}
+            variant="contained"
+            onClick={onSubmit}
+          >
+            Submit
+          </Button>
+
+          <Button
+            className={checked ? classes.positive : classes.negative}
+            variant="text"
+            onClick={() => {
+              setChecked(!checked);
+            }}
+          >
+            {checked ? "+" : "-"}
+          </Button>
+        </div>
       </div>
     </form>
   );

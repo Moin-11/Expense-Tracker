@@ -21,15 +21,11 @@ const App = () => {
         <ThemeProvider theme={thema}>
           <div
             style={{
-              margin: "0px",
-              padding: "0px",
-              borderWidth: "0px",
               backgroundImage: `url(${background})`,
-              backgroundSize: "cover",
+              backgroundSize: "100% 100%",
               backgroundPosition: "center center",
               backgroundRepeat: "no-repeat",
-              backgroundAttachment: "fixed",
-              aspectRatio: "revert",
+              backgroundAttachment: "scroll",
             }}
           >
             <Header />

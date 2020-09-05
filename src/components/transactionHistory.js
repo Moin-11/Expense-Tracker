@@ -31,7 +31,7 @@ const TransactionsTable = () => {
   return (
     <div
       style={{
-        marginTop: "3rem",
+        margin: "100px 20px 0px 20px",
       }}
     >
       <div
