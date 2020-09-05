@@ -2,13 +2,7 @@ import React, { createContext, useReducer } from "react";
 import TransactionsManipulator1000 from "./transReducer";
 
 const initialState = {
-  transactions: [
-    {
-      id: 0,
-      detail: "First transaction",
-      transactionValue: 20,
-    },
-  ],
+  transactions: [],
 };
 
 export const GlobalContext = createContext(initialState);
