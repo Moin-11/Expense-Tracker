@@ -14,7 +14,6 @@ import { Typography } from "@material-ui/core";
 const useStyles = makeStyles({
   tablecells: {
     color: "white",
-    padding: "0px 0px",
   },
 
   cancelIcon: {
@@ -47,7 +46,7 @@ const TransactionRow = ({ transaction }) => {
           }}
         >
           <CancelRounded
-            fontSize="medium"
+            fontSize="large"
             style={{ fill: "red" }}
           ></CancelRounded>
         </IconButton>
