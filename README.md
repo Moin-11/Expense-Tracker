@@ -1,3 +1,8 @@
+
+
+# A Minimalistic Expense Tracker made using React, ContextAPI and Material UI
+### visit [moin11-expense-tracker.netlify.app](moin11-expense-tracker.netlify.app) to preview the WebApp
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
